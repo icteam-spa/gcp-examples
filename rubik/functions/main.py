@@ -1,5 +1,6 @@
-from flask import jsonify, make_response
-from rubik.rubik import random_cube
+from flask import make_response
+
+from rubik import random_cube
 
 
 def random(request):
@@ -13,4 +14,5 @@ def random(request):
         <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
     """
     cube = random_cube()
-    return make_response(jsonify({'cube': cube}), 200)
+    return make_response(cube.to_json(), 200)
+

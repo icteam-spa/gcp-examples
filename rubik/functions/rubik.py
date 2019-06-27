@@ -1,3 +1,5 @@
+import json
+
 NAC = ""
 BLUE = "B"
 RED = "R"
@@ -18,6 +20,9 @@ class Cube:
             [NAC, NAC, NAC, NAC, ORANGE, NAC, NAC, NAC, NAC],
             [NAC, NAC, NAC, NAC, WHITE, NAC, NAC, NAC, NAC]
         ]
+
+    def to_json(self):
+        return json.dumps({'faces': self.faces})
 
 
 def random_cube():
