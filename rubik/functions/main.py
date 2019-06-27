@@ -1,5 +1,5 @@
 from flask import jsonify, make_response
-from rubik.rubic import random_cube
+from rubik.rubik import random_cube
 
 
 def random(request):
@@ -14,4 +14,3 @@ def random(request):
     """
     cube = random_cube()
     return jsonify(cube)
-
