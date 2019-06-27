@@ -19,5 +19,5 @@ class Cube:
 
 def random_cube():
     cube = Cube()
-    return cube
+    return make_response(cube, 200)
 
