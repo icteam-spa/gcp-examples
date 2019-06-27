@@ -13,4 +13,4 @@ def random(request):
         <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
     """
     cube = random_cube()
-    return jsonify(cube)
+    return make_response(jsonify(cube), 200)
