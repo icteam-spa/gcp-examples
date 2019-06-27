@@ -1,4 +1,4 @@
-import json
+import json, random
 
 NAC = ""
 BLUE = "B"
@@ -27,5 +27,21 @@ class Cube:
 
 def random_cube():
     cube = Cube()
+    for j in range(9):
+        if j is not 4:
+            colors = [BLUE, RED, GREEN, YELLOW, ORANGE, WHITE]
+            random.shuffle(colors)
+            for i in range(6):
+                cube.faces[i][j] = colors[i]
     return cube
 
+
+def validate_cube(cube):
+    ok = True
+    for j in range(9):
+        if ok:
+            colors = {BLUE, RED, GREEN, YELLOW, ORANGE, WHITE}
+            for i in range(6):
+                colors.discard(cube.faces[i][j])
+            ok = (ok and (len(colors) is 0))
+    return ok
