@@ -34,7 +34,8 @@ def validate(request):
         if 'cube' in data:
             cube = Cube(json.dumps(data['cube']))
             is_valid = validate_cube(cube)
-            response = make_response('{"valid":{}}'.format(is_valid), 200)
+            message = {"valid": is_valid}
+            response = make_response(json.dumps(message), 200)
         else:
             response = make_response('Missing cube parameter', 404)
     else:
