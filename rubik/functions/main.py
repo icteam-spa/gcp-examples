@@ -32,7 +32,7 @@ def validate(request):
     if request.is_json:
         data = request.json
         if 'cube' in data:
-            cube = Cube(json.dump(data['cube']))
+            cube = Cube(json.dumps(data['cube']))
             is_valid = validate_cube(cube)
             response = make_response('{"valid":{}}'.format(is_valid), 200)
         else:
