@@ -13,5 +13,16 @@ case $1 in
             --runtime python37 --trigger-http \
             --memory=128MB
             ;;
+    score)
+        gcloud functions deploy rubik_score --entry-point score \
+            --runtime python37 --trigger-http \
+            --memory=128MB
+            ;;
+    solve)
+        gcloud functions deploy rubik_score --entry-point score \
+            --runtime python37 --trigger-http \
+            --memory=128MB \
+            --update-env-vars=PROJECT_ID=$PROJECT_ID
+            ;;
 esac
 cd -
