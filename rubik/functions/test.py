@@ -1,3 +1,4 @@
+import json
 from rubik.rubik import random_cube, validate_cube, score_cube, submit_cube, Cube
 
 cube = random_cube()
@@ -32,5 +33,17 @@ print(score)
 
 submitted = submit_cube(random_cube())
 print(submitted)
+
+dct = {"faces": [
+    ["G", "G", "G", "G", "G", "G", "G", "G", "G"],
+    ["B", "B", "B", "B", "B", "B", "B", "B", "B"],
+    ["O", "O", "O", "O", "O", "O", "O", "O", "O"],
+    ["R", "R", "R", "R", "R", "R", "R", "R", "R"],
+    ["Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y", "Y"],
+    ["W", "W", "W", "W", "W", "W", "W", "W", "W"]
+]}
+
+cfj = Cube(json.dumps(dct))
+print(cfj.to_json())
 
 

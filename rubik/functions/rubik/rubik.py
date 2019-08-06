@@ -98,8 +98,8 @@ def submit_cube(cube):
     # TODO project_id = "Your Google Cloud Project ID"
     # TODO topic_name = "Your Pub/Sub topic name"
 
-    #publisher = pubsub_v1.PublisherClient()
-    #topic = publisher.topic_path(project_id, topic_name)
+    # publisher = pubsub_v1.PublisherClient()
+    # topic = publisher.topic_path(project_id, topic_name)
 
     result = dict()
     if validate_cube(cube):

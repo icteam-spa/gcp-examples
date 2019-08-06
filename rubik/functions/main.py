@@ -1,3 +1,5 @@
+import json
+
 from flask import make_response
 
 from rubik.rubik import random_cube, validate_cube, Cube
@@ -28,9 +30,9 @@ def validate(request):
         <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
     """
     if request.is_json:
-        json = request.json
-        if 'cube' in json:
-            cube = Cube(json['cube'])
+        data = request.json
+        if 'cube' in data:
+            cube = Cube(json.dump(data['cube']))
             is_valid = validate_cube(cube)
             response = make_response('{"valid":{}}'.format(is_valid), 200)
         else:
